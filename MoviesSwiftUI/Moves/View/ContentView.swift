@@ -9,29 +9,35 @@ import SwiftUI
 
 struct ContentView: View {
     private let columns: [GridItem] = [GridItem(.flexible())]
+    @StateObject private var viewModel = ContentViewModel()
     
     var body: some View {
-        ScrollView {
-            LazyVGrid(columns: columns) {
-                GeometryReader { geometry in
-                    HStack(alignment: .top) {
-                        Image("mockImg")
-                            .resizable()
-                            .frame(width: geometry.size.width / 2, height: geometry.size.height)
-                        VStack(alignment: .leading) {
-                            Text("Movie name")
-                                .font(.system(size: 24, weight: .bold))
-                            Text("Ограничивает ширину текста, чтобы он занимал не более половины ширины экрана, соответствуя ширине изображения.")
+        NavigationStack {
+            ScrollView {
+                LazyVGrid(columns: columns) {
+                    ForEach(viewModel.movies, id: \.title) { movie in
+                        NavigationLink {
+                            DetailMovieView()
+                        } label: {
+                            MovieCellView(movie: movie)
+                                .tint(.black)
                         }
                     }
+                    .padding(.horizontal, 10)
+                    .padding(.vertical, 10)
+                    .frame(height: 200)
+                    .background(Color(.systemGray4))
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 10)
+                            .stroke(Color.black, lineWidth: 2)
+                    )
+                    .clipShape(.rect(cornerRadius: 10))
                 }
                 .padding(.horizontal, 10)
-                .padding(.vertical, 10)
-                .frame(height: 200)
-                .background(Color(.systemGray4))
-                .clipShape(.rect(cornerRadius: 10))
             }
-            .padding(.horizontal, 10)
+            .onAppear {
+                viewModel.getMovies()
+            }
         }
     }
 }
