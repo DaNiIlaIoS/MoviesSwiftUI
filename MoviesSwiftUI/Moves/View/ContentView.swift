@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct ContentView: View {
-    private let columns: [GridItem] = [GridItem(.flexible())]
     @StateObject private var viewModel = ContentViewModel()
+    @Environment(\.colorScheme) var colorScheme
+    
+    private let columns: [GridItem] = [GridItem(.flexible()), GridItem(.flexible())]
     
     var body: some View {
         NavigationStack {
@@ -17,16 +19,17 @@ struct ContentView: View {
                 LazyVGrid(columns: columns) {
                     ForEach(viewModel.movies, id: \.title) { movie in
                         NavigationLink {
-                            DetailMovieView()
+                            DetailMovieView(movie: movie)
+                                .navigationTitle("Movie Details")
                         } label: {
                             MovieCellView(movie: movie)
-                                .tint(.black)
+                                .foregroundColor(colorScheme == .dark ? Color.white : Color.black)
                         }
                     }
                     .padding(.horizontal, 10)
                     .padding(.vertical, 10)
-                    .frame(height: 200)
-                    .background(Color(.systemGray4))
+                    .frame(height: 320)
+                    .background(Color(.systemGray5))
                     .overlay(
                         RoundedRectangle(cornerRadius: 10)
                             .stroke(Color.black, lineWidth: 2)
