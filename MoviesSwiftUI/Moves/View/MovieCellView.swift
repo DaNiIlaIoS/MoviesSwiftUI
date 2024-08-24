@@ -12,17 +12,17 @@ struct MovieCellView: View {
     
     var body: some View {
         GeometryReader { geometry in
-            HStack(alignment: .top) {
+            VStack(alignment: .leading) {
                 ZStack(alignment: Alignment(horizontal: .leading, vertical: .top)) {
                     AsyncImage(url: URL(string: "https://image.tmdb.org/t/p/w500" + "\(movie.posterPath)")) { image in
                         image
                             .resizable()
                             .scaledToFill()
-                            .frame(width: geometry.size.width / 2, height: geometry.size.height)
+                            .frame(width: geometry.size.width, height: 240)
                             .clipped()
                     } placeholder: {
                         ProgressView()
-                            .frame(width: geometry.size.width / 2, height: geometry.size.height)
+                            .frame(width: geometry.size.width, height: 240)
                     }
                     
                     VStack {
@@ -35,15 +35,14 @@ struct MovieCellView: View {
                     }
                     .padding()
                 }
-                VStack(alignment: .leading, spacing: 5) {
+                
+                VStack(alignment: .leading) {
                     Text(movie.title)
-                        .font(.system(size: 24, weight: .bold))
-                    Text(movie.overview)
-                    Text("Release date: \(movie.releaseDate)")
-                        .font(.system(size: 12, weight: .thin))
+                        .font(.system(size: 20, weight: .bold))
                 }
                 .multilineTextAlignment(.leading)
             }
         }
     }
 }
+
