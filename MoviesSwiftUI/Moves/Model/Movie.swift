@@ -8,6 +8,7 @@
 import Foundation
 
 struct Movie: Decodable {
+    let id: Int?
     let title: String
     let overview: String
     let posterPath: String
@@ -15,7 +16,7 @@ struct Movie: Decodable {
     let voteAverage: Double
     
     enum CodingKeys: String, CodingKey {
-        case title, overview
+        case id, title, overview
         case posterPath = "poster_path"
         case releaseDate = "release_date"
         case voteAverage = "vote_average"
