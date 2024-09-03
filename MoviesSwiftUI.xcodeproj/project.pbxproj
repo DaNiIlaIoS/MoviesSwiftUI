@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		482B07562C874B840034A98A /* MovieViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482B07552C874B840034A98A /* MovieViewModel.swift */; };
 		48563BF52C78D17E001264FD /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48563BF42C78D17E001264FD /* ContentViewModel.swift */; };
 		48563BF72C78EC6D001264FD /* MovieCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48563BF62C78EC6D001264FD /* MovieCellView.swift */; };
 		48563BF92C78F2DC001264FD /* DetailMovieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48563BF82C78F2DB001264FD /* DetailMovieView.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		482B07552C874B840034A98A /* MovieViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewModel.swift; sourceTree = "<group>"; };
 		48563BF42C78D17E001264FD /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
 		48563BF62C78EC6D001264FD /* MovieCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCellView.swift; sourceTree = "<group>"; };
 		48563BF82C78F2DB001264FD /* DetailMovieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMovieView.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				48563BF42C78D17E001264FD /* ContentViewModel.swift */,
+				482B07552C874B840034A98A /* MovieViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -207,6 +210,7 @@
 				489900DA2C7736D1004273EB /* NetworkManager.swift in Sources */,
 				48563BF52C78D17E001264FD /* ContentViewModel.swift in Sources */,
 				489900C72C761CBD004273EB /* ContentView.swift in Sources */,
+				482B07562C874B840034A98A /* MovieViewModel.swift in Sources */,
 				48563BF72C78EC6D001264FD /* MovieCellView.swift in Sources */,
 				489900C52C761CBD004273EB /* MoviesSwiftUIApp.swift in Sources */,
 				48563BF92C78F2DC001264FD /* DetailMovieView.swift in Sources */,
