@@ -8,25 +8,26 @@
 import SwiftUI
 
 struct MovieCellView: View {
-    let movie: Movie
+    @StateObject var viewModel: MovieViewModel
+    private let height: CGFloat = 240
     
     var body: some View {
         GeometryReader { geometry in
             VStack(alignment: .leading) {
                 ZStack(alignment: Alignment(horizontal: .leading, vertical: .top)) {
-                    AsyncImage(url: URL(string: "https://image.tmdb.org/t/p/w500" + "\(movie.posterPath)")) { image in
+                    AsyncImage(url: viewModel.posterURL) { image in
                         image
                             .resizable()
                             .scaledToFill()
-                            .frame(width: geometry.size.width, height: 240)
+                            .frame(width: geometry.size.width, height: height)
                             .clipped()
                     } placeholder: {
                         ProgressView()
-                            .frame(width: geometry.size.width, height: 240)
+                            .frame(width: geometry.size.width, height: height)
                     }
                     
                     VStack {
-                        Text(String(format: "%.1f", movie.voteAverage))
+                        Text(viewModel.voteAverage)
                             .padding(.horizontal, 10)
                             .padding(.vertical, 5)
                             .font(.system(size: 19, weight: .bold))
@@ -37,7 +38,7 @@ struct MovieCellView: View {
                 }
                 
                 VStack(alignment: .leading) {
-                    Text(movie.title)
+                    Text(viewModel.title)
                         .font(.system(size: 20, weight: .bold))
                 }
                 .multilineTextAlignment(.leading)
