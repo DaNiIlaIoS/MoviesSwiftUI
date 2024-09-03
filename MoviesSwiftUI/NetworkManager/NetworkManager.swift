@@ -33,7 +33,7 @@ final class NetworkManager {
 //                print(json ?? "null")
                 
                 do {
-                    let model = try JSONDecoder().decode(PopularMovies.self, from: data)
+                    let model = try JSONDecoder().decode(MovieList.self, from: data)
                     completion(.success(model.results))
                 } catch {
                     completion(.failure(error))
