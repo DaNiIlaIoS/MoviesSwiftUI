@@ -19,10 +19,10 @@ struct ContentView: View {
                 LazyVGrid(columns: columns) {
                     ForEach(viewModel.movies, id: \.title) { movie in
                         NavigationLink {
-                            DetailMovieView(movie: movie)
+                            DetailMovieView(viewModel: MovieViewModel(movie: movie))
                                 .navigationTitle("Movie Details")
                         } label: {
-                            MovieCellView(movie: movie)
+                            MovieCellView(viewModel: MovieViewModel(movie: movie))
                                 .foregroundColor(colorScheme == .dark ? Color.white : Color.black)
                         }
                     }

@@ -9,14 +9,14 @@ import SwiftUI
 import YouTubePlayerKit
 
 struct DetailMovieView: View {
-    let movie: Movie
+    @StateObject var viewModel: MovieViewModel
     private let posterWidth = UIScreen.main.bounds.width * 0.55
     
     var body: some View {
         VStack {
             VStack(spacing: 15) {
                 VStack(spacing: 10) {
-                    AsyncImage(url: URL(string: "https://image.tmdb.org/t/p/w500" + "\(movie.posterPath)")) { image in
+                    AsyncImage(url: viewModel.posterURL) { image in
                         image
                             .resizable()
                             .scaledToFill()
@@ -26,19 +26,20 @@ struct DetailMovieView: View {
                         ProgressView()
                             .frame(width: posterWidth, height: posterWidth * 1.5)
                     }
-                    Text(movie.title)
+                    Text(viewModel.title)
                         .font(.system(size: 22, weight: .black))
                     HStack {
-                        Text(movie.releaseDate)
+                        Text(viewModel.releaseDate)
                             .foregroundStyle(.gray)
-                        Text(String(format: "%.1f", movie.voteAverage))
+                        Text(viewModel.voteAverage)
                             .foregroundStyle(.movieAverage)
+                            .font(.system(size: 14, weight: .black))
                     }
                     .font(.system(size: 14))
                     
                 }
                 
-                Text(movie.overview)
+                Text(viewModel.overview)
                     .font(.system(size: 19, weight: .light))
                     .multilineTextAlignment(.center)
             }
