@@ -36,7 +36,7 @@ final class NetworkManager {
             let decoder = try JSONDecoder().decode(MovieList.self, from: data)
             return decoder.results
         } catch {
-            throw error
+            throw NetworkError.decodingError
         }
     }
 }
@@ -44,4 +44,5 @@ final class NetworkManager {
 enum NetworkError: Error {
     case invalidURL
     case invalidResponse
+    case decodingError
 }
