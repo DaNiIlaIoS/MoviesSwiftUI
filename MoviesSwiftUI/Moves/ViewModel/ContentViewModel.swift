@@ -7,18 +7,16 @@
 
 import Foundation
 
+@MainActor
 final class ContentViewModel: ObservableObject {
     private let networkManager = NetworkManager()
     @Published var movies: [Movie] = []
     
     func getMovies() {
-        networkManager.getMovies { [weak self] result in
-            switch result {
-            case .success(let movies):
-                DispatchQueue.main.async {
-                    self?.movies = movies
-                }
-            case .failure(let error):
+        Task {
+            do {
+                movies = try await networkManager.getMovies()
+            } catch {
                 print(error.localizedDescription)
             }
         }
