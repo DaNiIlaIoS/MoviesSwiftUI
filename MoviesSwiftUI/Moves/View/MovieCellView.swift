@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MovieCellView: View {
-    @StateObject var viewModel: MovieViewModel
+    @ObservedObject var viewModel: MovieViewModel
     private let height: CGFloat = 240
     
     var body: some View {

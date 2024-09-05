@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct PopularMovies: Decodable {
+struct MovieList: Decodable {
     let page: Int
     let results: [Movie]
 }

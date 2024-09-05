@@ -18,7 +18,7 @@
 		489900CC2C761CBF004273EB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 489900CB2C761CBF004273EB /* Preview Assets.xcassets */; };
 		489900D32C77365D004273EB /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489900D22C77365D004273EB /* Movie.swift */; };
 		489900DA2C7736D1004273EB /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489900D92C7736D1004273EB /* NetworkManager.swift */; };
-		489901002C78B766004273EB /* PopularMovies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489900FF2C78B766004273EB /* PopularMovies.swift */; };
+		489901002C78B766004273EB /* MovieList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489900FF2C78B766004273EB /* MovieList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,7 +33,7 @@
 		489900CB2C761CBF004273EB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		489900D22C77365D004273EB /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		489900D92C7736D1004273EB /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		489900FF2C78B766004273EB /* PopularMovies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularMovies.swift; sourceTree = "<group>"; };
+		489900FF2C78B766004273EB /* MovieList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,7 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				489900D22C77365D004273EB /* Movie.swift */,
-				489900FF2C78B766004273EB /* PopularMovies.swift */,
+				489900FF2C78B766004273EB /* MovieList.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -206,7 +206,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				489901002C78B766004273EB /* PopularMovies.swift in Sources */,
+				489901002C78B766004273EB /* MovieList.swift in Sources */,
 				489900DA2C7736D1004273EB /* NetworkManager.swift in Sources */,
 				48563BF52C78D17E001264FD /* ContentViewModel.swift in Sources */,
 				489900C72C761CBD004273EB /* ContentView.swift in Sources */,
