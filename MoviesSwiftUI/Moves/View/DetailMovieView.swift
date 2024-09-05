@@ -9,7 +9,7 @@ import SwiftUI
 import YouTubePlayerKit
 
 struct DetailMovieView: View {
-    @StateObject var viewModel: MovieViewModel
+    @ObservedObject var viewModel: MovieViewModel
     private let posterWidth = UIScreen.main.bounds.width * 0.55
     
     var body: some View {
@@ -49,3 +49,23 @@ struct DetailMovieView: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
     }
 }
+
+//struct YouTubeView: UIViewControllerRepresentable {
+//    let link: String
+//
+//    func makeUIViewController(context: Context) -> YouTubePlayerViewController {
+//        let ytPlayer = YouTubePlayerViewController()
+//        ytPlayer.player.source = .url(link)
+//        ytPlayer.player.configuration = YouTubePlayer.Configuration(
+//            autoPlay: false,
+//            showCaptions: false,
+//            showAnnotations: false,
+//            showRelatedVideos: false
+//        )
+//        return ytPlayer
+//    }
+//
+//    func updateUIViewController(_ ytPlayer: YouTubePlayerViewController, context: Context) {
+//        ytPlayer.player.source = .url(link)
+//    }
+//}
