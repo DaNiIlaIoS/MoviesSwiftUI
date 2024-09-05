@@ -17,7 +17,7 @@ final class ContentViewModel: ObservableObject {
             do {
                 movies = try await networkManager.getMovies()
             } catch {
-                print(error.localizedDescription)
+                print("Failed to load movies: \(error.localizedDescription)")
             }
         }
     }
