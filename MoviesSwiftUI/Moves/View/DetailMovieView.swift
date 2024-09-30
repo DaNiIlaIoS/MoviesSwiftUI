@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import YouTubePlayerKit
 
 struct DetailMovieView: View {
     @ObservedObject var viewModel: MovieViewModel
